@@ -1,16 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Cards from "./Cards";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
-  return(
-    <div>
-      <div className='background'>
-        <div className='page-title'>Projects so Far </div>
-        </div>
-      </div>
-
-  )
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <div className="background">
+            <div className="page-title">Projects so Far </div>
+            <Cards />
+          </div>
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;
