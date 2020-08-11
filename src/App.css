@@ -36,7 +36,7 @@
     transform: rotate(360deg);
   }
 }
-.page-title{
+.page-title {
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
@@ -45,21 +45,19 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-
 }
 
-.background{
+.background {
   background-color: #dfe4cb;
   align-items: center;
   justify-content: center;
   width: 1450px;
   height: 750px;
-
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  display: inline-block ;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
   margin-left: 30px;
   margin-right: 30px;
   margin-top: 50px;
@@ -73,15 +71,13 @@
   background-color: aliceblue;
   transition: 0.3s;
   text-align: center;
-
-  
 }
 
 .card:hover {
-  box-shadow: 0 20px 40px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.2);
 }
 
-.container {
+.containers {
   padding: 20px 80px;
   align-content: center;
   justify-content: center;

@@ -1,4 +1,4 @@
-.container {
+.container_timer {
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
   margin: 0.8rem;
 }
 
-button {
+.button_timer {
   box-shadow: 0 10px 14px -7px #3e7327;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352', GradientType=0);
   background: #77b55a linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
@@ -28,12 +28,12 @@ button {
   outline: 0;
 }
 
-button:hover {
+.button_timer:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#72b352', endColorstr='#77b55a', GradientType=0);
   background: #72b352 linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
 }
 
-button:active {
+.button_timer:active {
   position: relative;
   top: 1px;
 }
