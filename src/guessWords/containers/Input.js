@@ -2,12 +2,14 @@ import React, { useState, Fragment, useCallback } from "react";
 
 function Input(props) {
   const [guessedWord, setGuessedWord] = useState("");
+  const onChangeCallback = useCallback((event) => {
+    setGuessedWord(event.target.value);
+  });
   const onSubmitGuessedWord = () => {
     if (guessedWord.length != 0) {
       props.onGuessWord(guessedWord);
       setGuessedWord("");
     }
-
     return null;
   };
 
@@ -18,9 +20,7 @@ function Input(props) {
         id={"word-guess"}
         placeholder={"enter guess"}
         className={"mb-2 mx-sm-3"}
-        onChange={(event) => {
-          setGuessedWord(event.target.value);
-        }}
+        onChange={onChangeCallback}
       />
       <button
         className={"btn btn-primary mb-2"}
