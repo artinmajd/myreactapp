@@ -76,9 +76,3 @@
 .card:hover {
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.2);
 }
-
-.containers {
-  padding: 20px 80px;
-  align-content: center;
-  justify-content: center;
-}

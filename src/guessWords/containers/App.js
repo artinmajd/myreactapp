@@ -8,21 +8,7 @@ function App() {
   const [secretWord, setSecretWord] = useState("");
   const [guessedWords, setGuessedWords] = useState([]);
   const [matchcount, setMatchCount] = useState([]);
-  const guesswordCallback = useCallback(
-    (guessedWord) => {
-      if (guessedWord == secretWord) {
-        setSuccess(true);
-      }
-      setGuessedWords([
-        ...guessedWords,
-        {
-          guessedWord: guessedWord,
-          letterMatchCount: getLetterMatchCount(guessedWord, secretWord),
-        },
-      ]);
-    },
-    [guessedWords, secretWord]
-  );
+
   useEffect(() => {
     setSecretWord("Letter");
   }, []);
@@ -47,7 +33,17 @@ function App() {
     return t;
   };
 
-  const guessWord = guesswordCallback;
+  function guessWord(guessedWord) {
+    setSuccess(guessedWord === secretWord);
+
+    setGuessedWords([
+      ...guessedWords,
+      {
+        guessedWord: guessedWord,
+        letterMatchCount: getLetterMatchCount(guessedWord, secretWord),
+      },
+    ]);
+  }
 
   return (
     <div className={"container"}>

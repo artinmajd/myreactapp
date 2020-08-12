@@ -4,14 +4,15 @@ function Input(props) {
   const [guessedWord, setGuessedWord] = useState("");
   const onChangeCallback = useCallback((event) => {
     setGuessedWord(event.target.value);
-  });
-  const onSubmitGuessedWord = () => {
-    if (guessedWord.length != 0) {
+  }, []);
+
+  function onSubmitGuessedWord() {
+    if (guessedWord.length !== 0) {
       props.onGuessWord(guessedWord);
       setGuessedWord("");
     }
     return null;
-  };
+  }
 
   const contents = props.success ? null : (
     <Fragment>
