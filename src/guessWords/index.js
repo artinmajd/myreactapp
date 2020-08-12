@@ -1,3 +1,3 @@
-import guessWords from "./containers/App";
+import GuessWords from "./containers/App";
 
-export default guessWords;
+export default GuessWords;
