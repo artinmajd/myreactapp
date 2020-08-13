@@ -10,10 +10,28 @@ const appsList = ["timer", "guessWords"];
 function App() {
   return (
     <Router>
+      <div className="page-title">
+        <ul className="horizontal">
+          <li>
+            <a href="default.asp">Home</a>
+          </li>
+          <li>
+            <a href="news.asp">News</a>
+          </li>
+          <li>
+            <a href="contact.asp">Contact</a>
+          </li>
+          <li>
+            <a href="about.asp">About</a>
+          </li>
+        </ul>
+        <Link className="titr" to="/">
+          Projects so Far{" "}
+        </Link>
+      </div>
       <Switch>
         <Route exact path="/">
           <div className="background">
-            <div className="page-title">Projects so Far </div>
             <Cards apps={appsList} />
           </div>
         </Route>

@@ -45,6 +45,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  justify-content: space-between;
+  justify-self: flex-start;
 }
 
 .background {
@@ -75,4 +77,21 @@
 
 .card:hover {
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+.titr {
+  color: white;
+}
+.titr:hover {
+  text-decoration: none;
+  text-underline-position: unset;
+  color: darkkhaki;
+}
+ul.horizontal {
+  display: flex;
+  list-style-type: none;
+  background-color: #333;
+  margin-left: 0px;
+  justify-content: space-between;
+  justify-self: flex-start;
 }
