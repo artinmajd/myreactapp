@@ -11,17 +11,20 @@ function App() {
   useEffect(() => {
     setSecretWord("Letter");
   }, []);
-  const guessWordCallback = useCallback((guessedWord) => {
-    setSuccess(guessedWord === secretWord);
+  const guessWordCallback = useCallback(
+    (guessedWord) => {
+      setSuccess(guessedWord === secretWord);
 
-    setGuessedWords([
-      ...guessedWords,
-      {
-        guessedWord: guessedWord,
-        letterMatchCount: getLetterMatchCount(guessedWord, secretWord),
-      },
-    ]);
-  });
+      setGuessedWords([
+        ...guessedWords,
+        {
+          guessedWord: guessedWord,
+          letterMatchCount: getLetterMatchCount(guessedWord, secretWord),
+        },
+      ]);
+    },
+    [guessedWords, secretWord]
+  );
   const getLetterMatchCountCallback = useCallback((guessedWord, secretWord) => {
     let t = 0;
     const min = Math.min;
