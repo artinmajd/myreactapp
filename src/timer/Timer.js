@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./Timer.css";
 
 function Button(props) {
@@ -31,7 +31,7 @@ export function Timer() {
       window.setInterval(() => setvalue((prevvalue) => prevvalue + 1), 1000)
     );
     return () => clearInterval(id);
-  }, []);
+  }, [id]);
   return (
     <div className="container_timer">
       <div className="timer">{value}</div>

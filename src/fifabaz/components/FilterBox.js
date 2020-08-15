@@ -1,39 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 
 function FilterBox(props) {
   const filters = ["nationality", "club", "team_position"];
 
   const changeNationalityFilter = (event, x) => {
-    if (event == true) {
+    if (event === true) {
       props.setnationalityFilter([...props.nationalityFilter, x]);
     } else {
       props.setnationalityFilter(
         props.nationalityFilter.filter((a) => {
-          return a != x;
+          return a !== x;
         })
       );
     }
     console.log(props.nationalityFilter);
   };
   const changeClubFilter = (event, x) => {
-    if (event == true) {
+    if (event === true) {
       props.setclubFilter([...props.clubFilter, x]);
     } else {
       props.setclubFilter(
         props.clubFilter.filter((a) => {
-          return a != x;
+          return a !== x;
         })
       );
     }
     console.log(props.clubFilter);
   };
   const changePositionFilter = (event, x) => {
-    if (event == true) {
+    if (event === true) {
       props.setpositionFilter([...props.positionFilter, x]);
     } else {
       props.setpositionFilter(
         props.positionFilter.filter((a) => {
-          return a != x;
+          return a !== x;
         })
       );
     }
