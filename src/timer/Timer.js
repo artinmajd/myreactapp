@@ -27,11 +27,14 @@ export function Timer() {
     );
   }, [id]);
   useEffect(() => {
-    setid(
-      window.setInterval(() => setvalue((prevvalue) => prevvalue + 1), 1000)
+    const id_ = window.setInterval(
+      () => setvalue((prevvalue) => prevvalue + 1),
+      1000
     );
-    return () => clearInterval(id);
-  }, [id]);
+    setid(id_);
+
+    return () => clearInterval(id_);
+  }, []);
   return (
     <div className="container_timer">
       <div className="timer">{value}</div>

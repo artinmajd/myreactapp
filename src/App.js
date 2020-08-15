@@ -13,21 +13,18 @@ function App() {
       <div className="page-title">
         <ul className="horizontal">
           <li>
-            <a href="default.asp">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="news.asp">News</a>
+            <Link to="/timer">Timer</Link>
           </li>
           <li>
-            <a href="contact.asp">Contact</a>
+            <Link to="/guesswords">GuessWords</Link>
           </li>
           <li>
-            <a href="about.asp">About</a>
+            <a href="/fifabaz">Fifabaz</a>
           </li>
         </ul>
-        <Link className="titr" to="/">
-          Projects so Far{" "}
-        </Link>
       </div>
       <Switch>
         <Route exact path="/">
@@ -38,7 +35,7 @@ function App() {
         <Route path="/timer">
           <Timer />
         </Route>
-        <Route path="/guessWords">
+        <Route path="/guesswords">
           <GuessWords />
         </Route>
         <Route path="/fifabaz">

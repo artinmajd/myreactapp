@@ -88,10 +88,25 @@
   color: darkkhaki;
 }
 ul.horizontal {
-  width: 25%;
   display: flex;
+  justify-content: flex-end;
   list-style-type: none;
-  /* background-color: #333; */
   margin-left: 0px;
   justify-content: space-between;
+  margin-bottom: 0;
+}
+ul.horizontal li {
+  padding: 10px 20px;
+}
+ul.horizontal li a {
+  color: aliceblue;
+  text-decoration: none;
+  text-underline-position: unset;
+  transition: color 0.2s;
+}
+ul.horizontal li :hover {
+  text-decoration: none;
+  text-underline-position: unset;
+  color: rgb(214, 212, 100);
+  transition: color 0.4s;
 }
