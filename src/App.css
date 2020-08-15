@@ -41,12 +41,10 @@
   min-height: 10vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
-  justify-content: space-between;
-  justify-self: flex-start;
 }
 
 .background {
@@ -57,7 +55,7 @@
   height: 750px;
 }
 
-.card {
+.card-homepage {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   display: inline-block;
   margin-left: 30px;
@@ -75,12 +73,14 @@
   text-align: center;
 }
 
-.card:hover {
+.card-homepage:hover {
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.2);
 }
 
 .titr {
+  margin-inline-start: 0px;
   color: white;
+  align-self: center;
 }
 .titr:hover {
   text-decoration: none;
@@ -88,10 +88,10 @@
   color: darkkhaki;
 }
 ul.horizontal {
+  width: 25%;
   display: flex;
   list-style-type: none;
-  background-color: #333;
+  /* background-color: #333; */
   margin-left: 0px;
   justify-content: space-between;
-  justify-self: flex-start;
 }

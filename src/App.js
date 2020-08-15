@@ -5,8 +5,9 @@ import Cards from "./Cards";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Timer from "./timer";
 import GuessWords from "./guessWords";
+import Fifabaz from "./fifabaz";
 
-const appsList = ["timer", "guessWords"];
+const appsList = ["timer", "guessWords", "fifabaz"];
 function App() {
   return (
     <Router>
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route path="/guessWords">
           <GuessWords />
+        </Route>
+        <Route path="/fifabaz">
+          <Fifabaz />
         </Route>
       </Switch>
     </Router>

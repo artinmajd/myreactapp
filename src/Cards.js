@@ -4,7 +4,7 @@ function Cards(props) {
   let cards = props.apps.map((x) => {
     return (
       <Link to={`/${x}`}>
-        <div className="card">{x}</div>
+        <div className="card-homepage">{x}</div>
       </Link>
     );
   });
