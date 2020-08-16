@@ -1,33 +1,33 @@
 import React from "react";
-
-function SortBox(props) {
+import { useCallback } from "react";
+function SortBox({ sort, setSort }) {
   // Sorting buttons
   const fields = ["age", "short_name", "value"];
 
-  const setClassName = (type) => {
-    console.log(props.sort);
-    if (props.sort.sortBy === type) {
-      return props.sort.sortType === "desc" ? "btn-success" : "btn-info";
-    }
-    return "btn-outline-primary";
-  };
-
-  const changeSelectedSort = (val) => {
-    // Default sorted => "btn-outline-primary" Non selected button (Third Click)
-    // Descending sorted => "btn-success" First Click
-    // Ascending sorted => "btn-info" Second Click
-    // Your Code ...
-    if (val === props.sort.sortBy) {
-      if (props.sort.sortType === "desc") {
-        props.setSort({ sortBy: val, sortType: "asc" });
-      } else {
-        props.setSort({ sortBy: "", sortType: "" });
+  const setClassName = useCallback(
+    (type) => {
+      if (sort.sortBy === type) {
+        return sort.sortType === "desc" ? "btn-success" : "btn-info";
       }
-    } else {
-      console.log(val);
-      props.setSort({ sortBy: val, sortType: "desc" });
-    }
-  };
+      return "btn-outline-primary";
+    },
+    [sort.sortType, sort.sortBy]
+  );
+
+  const changeSelectedSort = useCallback(
+    (val) => {
+      if (val === sort.sortBy) {
+        if (sort.sortType === "desc") {
+          setSort({ sortBy: val, sortType: "asc" });
+        } else {
+          setSort({ sortBy: "", sortType: "" });
+        }
+      } else {
+        setSort({ sortBy: val, sortType: "desc" });
+      }
+    },
+    [sort.sortBy, sort.sortType, setSort]
+  );
   return (
     <div id="sort-box-container" className="d-flex py-2">
       <button

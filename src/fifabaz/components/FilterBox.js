@@ -1,53 +1,69 @@
-import React from "react";
+import React, { useCallback } from "react";
 
-function FilterBox(props) {
+function FilterBox({
+  cl,
+  nl,
+  ps,
+  nationalityFilter,
+  setnationalityFilter,
+  clubFilter,
+  setclubFilter,
+  positionFilter,
+  setpositionFilter,
+}) {
   const filters = ["nationality", "club", "team_position"];
 
-  const changeNationalityFilter = (event, x) => {
-    if (event === true) {
-      props.setnationalityFilter([...props.nationalityFilter, x]);
-    } else {
-      props.setnationalityFilter(
-        props.nationalityFilter.filter((a) => {
-          return a !== x;
-        })
-      );
-    }
-    console.log(props.nationalityFilter);
-  };
-  const changeClubFilter = (event, x) => {
-    if (event === true) {
-      props.setclubFilter([...props.clubFilter, x]);
-    } else {
-      props.setclubFilter(
-        props.clubFilter.filter((a) => {
-          return a !== x;
-        })
-      );
-    }
-    console.log(props.clubFilter);
-  };
-  const changePositionFilter = (event, x) => {
-    if (event === true) {
-      props.setpositionFilter([...props.positionFilter, x]);
-    } else {
-      props.setpositionFilter(
-        props.positionFilter.filter((a) => {
-          return a !== x;
-        })
-      );
-    }
-    console.log(props.positionFilter);
-  };
+  const changeNationalityFilter = useCallback(
+    (event, x) => {
+      if (event === true) {
+        setnationalityFilter([...nationalityFilter, x]);
+      } else {
+        setnationalityFilter(
+          nationalityFilter.filter((a) => {
+            return a !== x;
+          })
+        );
+      }
+    },
+    [setnationalityFilter, nationalityFilter]
+  );
+  const changeClubFilter = useCallback(
+    (event, x) => {
+      if (event === true) {
+        setclubFilter([...clubFilter, x]);
+      } else {
+        setclubFilter(
+          clubFilter.filter((a) => {
+            return a !== x;
+          })
+        );
+      }
+    },
+    [setclubFilter, clubFilter]
+  );
+  const changePositionFilter = useCallback(
+    (event, x) => {
+      if (event === true) {
+        setpositionFilter([...positionFilter, x]);
+      } else {
+        setpositionFilter(
+          positionFilter.filter((a) => {
+            return a !== x;
+          })
+        );
+      }
+    },
+    [setpositionFilter, positionFilter]
+  );
 
-  let nationalityCheckBox = props.nl.map((x) => (
+  let nationalityCheckBox = nl.map((x) => (
     <div class="form-check">
       <input
         class="form-check-input"
         type="checkbox"
         id="inlineCheckbox1"
         value="nationality"
-        checked={props.nationalityFilter.includes(x)}
+        checked={nationalityFilter.includes(x)}
         onChange={(event) => changeNationalityFilter(event.target.checked, x)}
       ></input>
       <label class="form-check-label" for="inlineCheckbox1">
@@ -55,14 +71,14 @@ function FilterBox(props) {
       </label>
     </div>
   ));
-  let clubCheckBox = props.cl.map((x) => (
+  let clubCheckBox = cl.map((x) => (
     <div class="form-check">
       <input
         class="form-check-input"
         type="checkbox"
         id="inlineCheckbox1"
         value="club"
-        checked={props.clubFilter.includes(x)}
+        checked={clubFilter.includes(x)}
         onChange={(event) => changeClubFilter(event.target.checked, x)}
       ></input>
       <label class="form-check-label" for="inlineCheckbox1">
@@ -70,14 +86,14 @@ function FilterBox(props) {
       </label>
     </div>
   ));
-  let positionCheckBox = props.ps.map((x) => (
+  let positionCheckBox = ps.map((x) => (
     <div class="form-check">
       <input
         class="form-check-input"
         type="checkbox"
         id="inlineCheckbox1"
         value="position"
-        checked={props.positionFilter.includes(x)}
+        checked={positionFilter.includes(x)}
         onChange={(event) => changePositionFilter(event.target.checked, x)}
       ></input>
       <label class="form-check-label" for="inlineCheckbox1">
