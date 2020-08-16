@@ -13,29 +13,31 @@ function App() {
       <div className="page-title">
         <ul className="horizontal">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/myreactapp">Home</Link>
           </li>
 
           {appsList.map((x) => (
             <li>
-              <Link to={`/${x}`}>{`${x[0].toUpperCase()}${x.slice(1)}`}</Link>
+              <Link to={`/myreactapp/${x}`}>{`${x[0].toUpperCase()}${x.slice(
+                1
+              )}`}</Link>
             </li>
           ))}
         </ul>
       </div>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/myreactapp">
           <div className="background">
             <Cards apps={appsList} />
           </div>
         </Route>
-        <Route path="/timer">
+        <Route path="/myreactapp/timer">
           <Timer />
         </Route>
-        <Route path="/guesswords">
+        <Route path="/myreactapp/guesswords">
           <GuessWords />
         </Route>
-        <Route path="/fifabaz">
+        <Route path="/myreactapp/fifabaz">
           <Fifabaz />
         </Route>
       </Switch>

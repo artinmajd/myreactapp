@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Cards(props) {
   let cards = props.apps.map((x) => {
     return (
-      <Link to={`/${x}`}>
+      <Link to={`/myreactapp/${x}`}>
         <div className="card-homepage">{x}</div>
       </Link>
     );
