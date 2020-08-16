@@ -1,33 +1,27 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Cards from "./Cards";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Timer from "./timer";
 import GuessWords from "./guessWords";
+import Fifabaz from "./fifabaz";
 
-const appsList = ["timer", "guessWords"];
+const appsList = ["timer", "guesswords", "fifabaz"];
 function App() {
   return (
     <Router>
       <div className="page-title">
         <ul className="horizontal">
           <li>
-            <a href="default.asp">Home</a>
+            <Link to="/">Home</Link>
           </li>
-          <li>
-            <a href="news.asp">News</a>
-          </li>
-          <li>
-            <a href="contact.asp">Contact</a>
-          </li>
-          <li>
-            <a href="about.asp">About</a>
-          </li>
+
+          {appsList.map((x) => (
+            <li>
+              <Link to={`/${x}`}>{`${x[0].toUpperCase()}${x.slice(1)}`}</Link>
+            </li>
+          ))}
         </ul>
-        <Link className="titr" to="/">
-          Projects so Far{" "}
-        </Link>
       </div>
       <Switch>
         <Route exact path="/">
@@ -38,8 +32,11 @@ function App() {
         <Route path="/timer">
           <Timer />
         </Route>
-        <Route path="/guessWords">
+        <Route path="/guesswords">
           <GuessWords />
+        </Route>
+        <Route path="/fifabaz">
+          <Fifabaz />
         </Route>
       </Switch>
     </Router>
