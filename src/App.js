@@ -6,7 +6,7 @@ import Timer from "./timer";
 import GuessWords from "./guessWords";
 import Fifabaz from "./fifabaz";
 
-const appsList = ["timer", "guessWords", "fifabaz"];
+const appsList = ["timer", "guesswords", "fifabaz"];
 function App() {
   return (
     <Router>
@@ -15,15 +15,12 @@ function App() {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/timer">Timer</Link>
-          </li>
-          <li>
-            <Link to="/guesswords">GuessWords</Link>
-          </li>
-          <li>
-            <a href="/fifabaz">Fifabaz</a>
-          </li>
+
+          {appsList.map((x) => (
+            <li>
+              <Link to={`/${x}`}>{`${x[0].toUpperCase()}${x.slice(1)}`}</Link>
+            </li>
+          ))}
         </ul>
       </div>
       <Switch>
